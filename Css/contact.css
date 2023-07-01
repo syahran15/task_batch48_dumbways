@@ -30,12 +30,18 @@ option {
 }
 
 select {
-  width: 103%;
+  width: 105%;
 }
 
 label {
   font-size: 1.1em;
   font-weight: 600;
+}
+
+.btn-summit {
+  width: 105%;
+  display: flex;
+  justify-content: end;
 }
 
 button {
@@ -50,4 +56,8 @@ button {
 button:hover {
   background-color: orangered;
   color: white;
+}
+
+.nav-right .active {
+  background-color: orangered;
 }
