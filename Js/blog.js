@@ -13,9 +13,38 @@ function addBlog(event) {
   let java = document.getElementById("input-java").checked;
   let file = document.getElementById("input-file").files;
 
-  // Duration Feature
+  // DURATION FEATURE
 
-  let duration = "4 Bulan 10 Hari";
+  let distance = endDate - startDate ; // by default the value is second
+
+  let miliSecond = 1000;
+  let secondInHour = 3600; // convert to second
+  let hourInDay = 24;
+  let dayInMonth = 30;
+  let monthInYear = 12;
+
+  let distanceDay = Math.floor (distance / (miliSecond * secondInHour * hourInDay)); // fungsi floor() untuk membulatkan hasil bilangan
+  let distanceMonth = Math.floor (distance / (miliSecond * secondInHour * hourInDay * dayInMonth)); 
+  let distanceYear = Math.floor (distance / (miliSecond * secondInHour * hourInDay * dayInMonth *monthInYear)); 
+
+  duration = "";
+
+  if (distanceDay <= 30 && distanceDay > 1) {
+    duration = `${distanceDay} Days`;
+  } else if (distanceDay === 1) {
+    duration = `${distanceDay} Day`;
+  } else if (distanceMonth === 1) {
+    duration = `${distanceMonth} Month`;
+  } else if (distanceDay > 30 && distanceMonth > 1) {
+    duration = `${distanceMonth} Months ${distanceDay % 30} Days`;
+  } else if (distanceYear === 1) {
+    duration = `${distanceYear} Year`;
+  } else if (distanceMonth > 12 && distanceYear > 1) {
+    duration = `${distanceYear} Years ${distanceMonth % 12} Months ${distanceDay % 30} Days`;
+  }
+
+  console.log(duration);
+
 
   // CHECKBOX FEATURE
 
@@ -34,7 +63,7 @@ function addBlog(event) {
     technologies.push('<i class="fa-brands fa-java" id="java"></i>');
   }
 
-  let technologiesHTML = technologies.join("");
+  let technologiesHTML = technologies.join();
 
   console.log(technologiesHTML);
 
@@ -52,8 +81,10 @@ function addBlog(event) {
     return alert("Input the value first");
   }
 
-  // Take value of images
+  // TAKE THE VALUE OF IMAGES
   let image = URL.createObjectURL(file[0]);
+
+  // PUSH dataBlog to vlog
 
   let blog = {
     image,
@@ -71,6 +102,8 @@ function addBlog(event) {
   console.log(dataBlog);
 }
 
+//SHOW THE RESULT OF THE FORM BLOG
+
 function renderBlog() {
   document.getElementById("content").innerHTML = "";
 
@@ -82,7 +115,7 @@ function renderBlog() {
       ><img src= ${dataBlog[i].image} alt=""
     /></a>
     <h3>Dumbways Mobile App - 2023</h3>
-    <span>Durasi : ${dataBlog[i].duration} | ${dataBlog[i].author}</span>
+    <span>Duration : ${dataBlog[i].duration} | ${dataBlog[i].author}</span>
     <p>
       ${dataBlog[i].description}
     </p>
