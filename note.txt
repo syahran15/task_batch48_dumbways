@@ -1,0 +1,9 @@
+Penjelasan kode mailto :
+
+1. mailto:: Ini adalah skema URL yang digunakan untuk menunjukkan bahwa ini adalah tautan email.
+2. ${email}: Ini adalah variabel yang harus diganti dengan alamat email tujuan. Misalnya, jika Anda ingin mengirim email ke "contoh@email.com",
+    Anda harus menggantinya dengan alamat email yang sebenarnya.
+3. ?subject=${subject}: Bagian ini menentukan subjek email. Variabel ${subject} harus diganti dengan subjek yang diinginkan untuk email tersebut.
+    Misalnya, jika Anda ingin subjek email adalah "Pesan Penting", Anda harus menggantinya dengan "Pesan%20Penting" (URL-encoded).
+4. &body=halo: Bagian ini menentukan isi email. Dalam contoh ini, isi email diatur sebagai "halo". Anda dapat menggantinya dengan isi email yang 
+    diinginkan.

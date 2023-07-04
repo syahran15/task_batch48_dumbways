@@ -1,5 +1,5 @@
 body {
-  background-color: white;
+  background-color: #dce0e4;
 }
 
 h1 {
@@ -22,11 +22,12 @@ select,
 option {
   width: 100%;
   margin-bottom: 1.5em;
-  border-radius: 1em;
+  border-radius: 0.5em;
   padding: 1em;
   margin-top: 0.5em;
   border: none;
   box-shadow: 0.5px 0.5px 1px 1px #888;
+  resize: none;
 }
 
 select {
@@ -50,11 +51,13 @@ button {
   margin-bottom: 2em;
   border: none;
   box-shadow: 0.5px 0.5px 1px 1px #888;
-  background-color: white;
+  background-color: orangered;
+  color: white;
+  cursor: pointer;
 }
 
 button:hover {
-  background-color: orangered;
+  background-color: rgb(239, 64, 0);
   color: white;
 }
 

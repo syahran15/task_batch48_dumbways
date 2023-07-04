@@ -29,8 +29,6 @@ function submitData() {
 
     //mailto
     let a = document.createElement("a");
-    a.href = `mailto:${email}?subject=${subject}&body=halo, Hello my name is ${name}, 
-    
-    ${message}`;
+    a.href = `mailto:${email}?subject=${subject}&body=Hello, my name is ${name} | ${message}`;
     a.click()
 }
