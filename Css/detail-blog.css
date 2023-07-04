@@ -1,0 +1,80 @@
+section {
+    margin-top: 3em;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+
+h1 {
+    font-size: 2em;
+}
+.main-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.main-content .img-content {
+    width: 60%;
+}
+
+.main-content .img-content img {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+}
+
+.container .main-content {
+    margin-bottom: 1em;
+}
+
+.container .description-content {
+    text-align: justify;
+    margin-bottom: 2em;
+}
+
+.detail-content {
+    margin-left: 2em;
+}
+
+.detail-content .title {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+
+.detail-content .title:nth-last-of-type(1) {
+    margin-top: 2em;
+}
+
+
+.main-content .detail-content {
+    width: 40%;
+}
+
+.detail-content .duration div{
+    margin-bottom: 1em;
+}
+
+.technologies {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.technologies .left div,
+.technologies .right div {
+    margin-bottom: 1em;
+}
+
+.detail-content i {
+    margin-right: 0.5em;
+}
+
+.technologies i {
+    font-size: 1.5vw;
+}
+

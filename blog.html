@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Css/style.css" />
+    <link rel="stylesheet" href="Css/blog.css" />
+
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Blog</title>
+  </head>
+  <body>
+    <!-- Navigation Start -->
+    <nav>
+      <div class="nav-left">
+        <ul>
+          <li>
+            <a href="index.html"
+              ><img src="images/dumbways.png" alt="logo"
+            /></a>
+          </li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <a href="contact.html">Contact Me</a>
+      </div>
+    </nav>
+    <!-- Navigation End -->
+    <section>
+      <h1>ADD MY PROJECT</h1>
+      <div class="main-container">
+        <form onsubmit="addBlog(event)">
+          <div class="project-name">
+            <label for="input-project">Project Name</label>
+            <input type="text" id="input-project" />
+          </div>
+          <div class="date">
+            <div class="start-date">
+              <label for="input-start">Start Date</label>
+              <input type="date" id="input-start" />
+            </div>
+            <div class="end-date">
+              <label for="input-end">End Date</label>
+              <input type="date" id="input-end" />
+            </div>
+          </div>
+          <div class="description">
+            <label for="input-description">Description</label>
+            <textarea id="input-description" cols="30" rows="5"></textarea>
+          </div>
+          <label>Technologies</label>
+          <div class="container-technologies">
+            <div class="tech left">
+              <div class="framework">
+                <input type="checkbox" id="input-javascript" />
+                <label for="input-javascript">JavaScript</label>
+              </div>
+              <div class="framework">
+                <input type="checkbox" id="input-reactJS" />
+                <label for="input-reactJS">ReactsJS</label>
+              </div>
+            </div>
+            <div class="tech right">
+              <div class="framework">
+                <input type="checkbox" id="input-php" />
+                <label for="input-php">PHP</label>
+              </div>
+              <div class="framework">
+                <input type="checkbox" id="input-java" />
+                <label for="input-java">java</label>
+              </div>
+            </div>
+          </div>
+          <div>
+            <label for="input-file">Upload Image</label>
+            <label for="input-file" class="input-file">
+              <span>choose</span>
+              <input type="file" id="input-file" hidden />
+              <i class="fa-sharp fa-solid fa-file-import"></i>
+            </label>
+          </div>
+          <div class="btn-submit">
+            <button>Submit</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- Result Blog -->
+    <section>
+      <div class="card-result">
+        <h1>MY PROJECT</h1>
+        <div id="content">
+          <div class="container-card">
+            <a href="detail-blog.html"
+              ><img src="images/img-result.jpg" alt=""
+            /></a>
+            <h3>Dumbways Mobile App - 2023</h3>
+            <span>Durasi : 3 Bulan | Ahmad Syahran Zidane</span>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Repellendus facere cupiditate similique nesciunt id quibusdam in
+              totam deleniti, asperiores, animi delectus nobis nisi? Sapiente
+              fugiat, fugit illo harum minima deleniti.
+            </p>
+            <div class="programming-language">
+              <i class="fa-brands fa-js" id="javascript"></i>
+              <i class="fa-brands fa-php" id="php"></i>
+              <i class="fa-brands fa-java" id="java"></i>
+              <i class="fa-brands fa-react" id="reactsJS"></i>
+            </div>
+            <div class="btn-group">
+              <button>Edit</button>
+              <button>Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="Js/blog.js"></script>
+  </body>
+</html>
