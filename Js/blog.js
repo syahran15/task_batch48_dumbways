@@ -13,39 +13,6 @@ function addBlog(event) {
   let java = document.getElementById("input-java").checked;
   let file = document.getElementById("input-file").files;
 
-  // DURATION FEATURE
-
-  let distance = endDate - startDate ; // by default the value is second
-
-  let miliSecond = 1000;
-  let secondInHour = 3600; // convert to second
-  let hourInDay = 24;
-  let dayInMonth = 30;
-  let monthInYear = 12;
-
-  let distanceDay = Math.floor (distance / (miliSecond * secondInHour * hourInDay)); // fungsi floor() untuk membulatkan hasil bilangan
-  let distanceMonth = Math.floor (distance / (miliSecond * secondInHour * hourInDay * dayInMonth)); 
-  let distanceYear = Math.floor (distance / (miliSecond * secondInHour * hourInDay * dayInMonth *monthInYear)); 
-
-  duration = "";
-
-  if (distanceDay <= 30 && distanceDay > 1) {
-    duration = `${distanceDay} Days`;
-  } else if (distanceDay === 1) {
-    duration = `${distanceDay} Day`;
-  } else if (distanceMonth === 1) {
-    duration = `${distanceMonth} Month`;
-  } else if (distanceDay > 30 && distanceMonth > 1) {
-    duration = `${distanceMonth} Months ${distanceDay % 30} Days`;
-  } else if (distanceYear === 1) {
-    duration = `${distanceYear} Year`;
-  } else if (distanceMonth > 12 && distanceYear > 1) {
-    duration = `${distanceYear} Years ${distanceMonth % 12} Months ${distanceDay % 30} Days`;
-  }
-
-  console.log(duration);
-
-
   // CHECKBOX FEATURE
 
   let technologies = [];
@@ -89,7 +56,7 @@ function addBlog(event) {
   let blog = {
     image,
     projectName,
-    duration,
+    duration : "4 Bulan 10 Hari",
     description,
     technologiesHTML,
     author: "Syahran Zidane",
