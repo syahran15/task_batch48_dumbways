@@ -15,36 +15,50 @@ function addBlog(event) {
 
   // DURATION FEATURE
 
-  let distance = endDate - startDate ; // by default the value is second
+  let distance = endDate - startDate; // by default the value is second
 
   let miliSecond = 1000;
   let secondInHour = 3600; // convert to second
   let hourInDay = 24;
+  let dayInWeek = 7;
   let dayInMonth = 30;
   let monthInYear = 12;
 
-  let distanceDay = Math.floor (distance / (miliSecond * secondInHour * hourInDay)); // fungsi floor() untuk membulatkan hasil bilangan
-  let distanceMonth = Math.floor (distance / (miliSecond * secondInHour * hourInDay * dayInMonth)); 
-  let distanceYear = Math.floor (distance / (miliSecond * secondInHour * hourInDay * dayInMonth *monthInYear)); 
+  let distanceDay = Math.floor(
+    distance / (miliSecond * secondInHour * hourInDay)
+  ); // fungsi floor() untuk membulatkan hasil bilangan
+  // let distanceWeek = Math.floor(
+  //   distance / (miliSecond * secondInHour * hourInDay * dayInWeek)
+  // );
+  let distanceMonth = Math.floor(
+    distance / (miliSecond * secondInHour * hourInDay * dayInMonth)
+  );
+  let distanceYear = Math.floor(
+    distance /
+      (miliSecond * secondInHour * hourInDay * dayInMonth * monthInYear)
+  );
 
   duration = "";
 
   if (distanceDay <= 30 && distanceDay > 1) {
     duration = `${distanceDay} Days`;
-  } else if (distanceDay === 1) {
+  } else if (distanceDay == 1) {
     duration = `${distanceDay} Day`;
-  } else if (distanceMonth === 1) {
-    duration = `${distanceMonth} Month`;
+  // } else if (distanceMonth % 7) {
+  //   duration = `${distanceWeek} Week`;
+  } else if (distanceDay > 30 && distanceMonth >= 1) {
+    duration = `${distanceMonth} Month ${distanceDay % 30} Days`;
   } else if (distanceDay > 30 && distanceMonth > 1) {
     duration = `${distanceMonth} Months ${distanceDay % 30} Days`;
-  } else if (distanceYear === 1) {
+  } else if (distanceYear == 1) {
     duration = `${distanceYear} Year`;
   } else if (distanceMonth > 12 && distanceYear > 1) {
-    duration = `${distanceYear} Years ${distanceMonth % 12} Months ${distanceDay % 30} Days`;
+    duration = `${distanceYear} Years ${distanceMonth % 12} Months ${
+      distanceDay % 30
+    } Days`;
   }
 
   console.log(duration);
-
 
   // CHECKBOX FEATURE
 
@@ -63,7 +77,7 @@ function addBlog(event) {
     technologies.push('<i class="fa-brands fa-java" id="java"></i>');
   }
 
-  let technologiesHTML = technologies.join();
+  let technologiesHTML = technologies.join("");
 
   console.log(technologiesHTML);
 
@@ -93,6 +107,7 @@ function addBlog(event) {
     description,
     technologiesHTML,
     author: "Syahran Zidane",
+    durationPost : new Date(),
   };
 
   dataBlog.push(blog);
@@ -122,6 +137,9 @@ function renderBlog() {
     <div class="programming-language">
       ${dataBlog[i].technologiesHTML}
     </div>
+    <div>
+      <span style="color: #888; text-align: end;">${getDurationPost(dataBlog[i].durationPost)}</span>
+    </div>
     <div class="btn-group">
       <button>Edit</button>
       <button>Delete</button>
@@ -129,3 +147,52 @@ function renderBlog() {
   </div>`;
   }
 }
+
+// DURATION POST FEATURE
+
+function getDurationPost(time) {
+  let timeNow = new Date();
+  let timePost = time;
+
+  let durationPost = timeNow - timePost;
+  console.log(durationPost);
+
+  //declaration
+
+  let miliSecond = 1000;
+  let secondInHour = 3600; // converted to second
+  let minutesInHour = 60;
+  let hourInDay = 24;
+
+  let durationPostDay = Math.floor(
+    durationPost / (miliSecond * secondInHour * hourInDay)
+  );
+  let durationPostHour = Math.floor(durationPost / (miliSecond * secondInHour));
+  let durationPostMinute = Math.floor(
+    durationPost / (miliSecond * minutesInHour)
+  );
+  let durationPostSecond = Math.floor(durationPost / miliSecond);
+
+  if (durationPostSecond == 1) {
+    return `${durationPostSecond} second ago`;
+  } else if (durationPostSecond <= 60) {
+    return `${durationPostSecond} seconds ago`;
+  } else if (durationPostMinute == 1) {
+    return `${durationPostMinute} minute ago`;
+  } else if (durationPostMinute <= 60) {
+    return `${durationPostMinute} minutes ago`;
+  } else if (durationPostHour == 1) {
+    return `${durationPostHour} hour Ago`;
+  } else if (durationPostHour <= 24) {
+    return `${durationPostHour} hours ago`;
+  } else if (durationPostDay == 1) {
+    return `${durationPostDay} day ago`;
+  } else if (durationPostDay <= 30) {
+    return `${durationPostDay} days ago`;
+  } 
+}
+
+setInterval(function () {
+  renderBlog();
+}, 1000);
+
