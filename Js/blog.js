@@ -66,7 +66,7 @@ function addBlog(event) {
 
   if (javascript) {
     technologies.push('<i class="fa-brands fa-js" id="javascript"></i>');
-  }
+  } 
   if (react) {
     technologies.push('<i class="fa-brands fa-react" id="reactsJS"></i>');
   }

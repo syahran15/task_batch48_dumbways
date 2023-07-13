@@ -23,20 +23,41 @@
     <nav>
       <div class="nav-left">
         <ul>
-          <li>
-            <a href="index.html"
-              ><img src="images/dumbways.png" alt="logo"
-            /></a>
-          </li>
-          <li><a href="index.html">Home</a></li>
+          <a href="index.html"><img src="images/logo.svg" alt="logo" /></a>
+
+          <li><a href="index.html" >Home</a></li>
           <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="testimonial.html">Testimonial</a></li>
         </ul>
       </div>
       <div class="nav-right">
         <a href="contact.html">Contact Me</a>
       </div>
+
+      <!-- Hamburger Start -->
+      <div class="nav-barsmenu" id="barsmenu">
+        <button
+          style="background-color: transparent; border: none; cursor: pointer"
+          onclick="openHamburger()"
+        >
+          <i class="fa-2x fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <!-- Hamburger End -->
     </nav>
+
+    <!-- Navigation Mobile Start -->
+    <div class="hamburger-nav-container" id="hamburger-nav-container">
+      <a href="index.html" >Home</a>
+      <a href="blog.html" class="hamburger-active">Blog</a>
+      <a href="tesimonial.html">Testimonial</a>
+      <div class="container-contact-humburger">
+        <a href="contact.html" class="btn-contact-humburger">Contact Me</a>
+      </div>
+    </div>
+    <!-- Navigation Mobile End -->
     <!-- Navigation End -->
+
     <section>
       <h1>ADD MY PROJECT</h1>
       <div class="main-container">
@@ -123,7 +144,7 @@
               <i class="fa-brands fa-react" id="reactsJS"></i>
             </div>
             <div>
-              <span style="color: #888; text-align: end;"></span>
+              <span style="color: #888; text-align: end"></span>
             </div>
             <div class="btn-group">
               <button>Edit</button>
@@ -136,5 +157,6 @@
 
     <!-- JavaScript -->
     <script src="Js/blog.js"></script>
+    <script src="Js/index.js"></script>
   </body>
 </html>

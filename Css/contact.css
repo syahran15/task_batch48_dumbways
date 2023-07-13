@@ -1,10 +1,7 @@
-body {
-  background-color: #dce0e4;
-}
-
 h1 {
   margin-top: 1em;
   font-size: 2em;
+  text-align: center;
 }
 .container {
   display: flex;
@@ -26,7 +23,6 @@ option {
   padding: 1em;
   margin-top: 0.5em;
   border: none;
-  box-shadow: 0.5px 0.5px 1px 1px #888;
   resize: none;
 }
 
@@ -50,17 +46,16 @@ button {
   border-radius: 1.5em;
   margin-bottom: 2em;
   border: none;
-  box-shadow: 0.5px 0.5px 1px 1px #888;
-  background-color: orangered;
+  background-color: #116A7B;
   color: white;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: rgb(239, 64, 0);
+  background-color: rgb(22, 143, 167);
   color: white;
 }
 
 .nav-right .active {
-  background-color: orangered;
+  background-color: #116A7B;
 }

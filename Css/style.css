@@ -1,23 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap");
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   font-family: "Poppins", sans-serif;
   margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: #dddddd;
+  background-color: #c2dedc;
   width: 100%;
 }
 
 /* navigation */
 
 nav {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #d1d1d1;
-  padding: 1em;
+  height: 10vh;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  -webkit-backdrop-filter: blur(4px);
+  -o-backdrop-filter: blur(4px);
+  -moz-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
 
 .nav-left ul {
@@ -25,8 +40,10 @@ nav {
   align-items: center;
 }
 
-.nav-left li img {
-  width: 3vw;
+.nav-left img {
+  width: 180px;
+  margin-right: 2em;
+  margin-left: 2.5em;
 }
 
 .nav-left li {
@@ -36,46 +53,72 @@ nav {
 .nav-left li a {
   text-decoration: none;
   color: black;
+  font-size: 1.2em;
 }
 
 .nav-left li a:hover {
-  color: orangered;
+  color: rgb(22, 143, 167);
   font-weight: 900;
 }
 
 .nav-left li .active {
-  color: orangered;
+  color: #116a7b;
+  font-weight: 600;
 }
 
 .nav-right a {
   text-decoration: none;
   color: white;
-  background-color: black;
+  background-color: #116a7b;
   padding: 0.5em 1em;
   border-radius: 1.5em;
+  margin-right: 3em;
 }
 
 .nav-right a:hover {
-  background-color: orangered;
+  background-color: rgb(22, 143, 167);
+}
+
+/* Navigation Mobile */
+.nav-barsmenu {
+  display: none;
+}
+
+.hamburger-nav-container {
+  display: none;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.hamburger-nav-container a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  background-color: #fff;
+  border-bottom: 1px solid black;
+}
+
+.hamburger-nav-container a:hover {
+  background-color: #116a7b;
+  color: #fff;
 }
 
 /* Content */
-
-.card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+section {
+  margin-top: 6em;
 }
 
 .card-container {
-  width: 60%;
-  /* -webkit-box-shadow: 0 10px 6px -6px #777;
-    -moz-box-shadow: 0 10px 6px -6px #777;
-    box-shadow: 0 10px 6px -6px #777; */
+  width: 100%;
   padding: 5em;
-  margin: 1em 0;
   border-radius: 0.5em;
-  background-color: white;
   display: flex;
 }
 
@@ -87,64 +130,67 @@ nav {
 }
 
 h1 {
-  text-align: center;
+  font-size: 2em;
   margin-bottom: 0.5em;
 }
 
 .card-container p {
-  margin-bottom: 2em;
+  font-size: 1.2em;
+  margin-bottom: 2.5em;
 }
 
 .btn-contact {
+  font-size: 1.2em;
   text-decoration: none;
   color: white;
-  background-color: black;
+  background-color: #116a7b;
   padding: 0.5em 1.3em;
   border-radius: 2em;
 }
 
 .btn-contact:hover {
-  background-color: orangered;
+  background-color: rgb(22, 143, 167);
 }
 
 .group {
   display: flex;
   align-items: center;
-  margin-top: 2em;
+  margin-top: 2.5em;
 }
 
 .group span {
   margin-right: 1em;
+  font-size: 1.2em;
 }
 
 .group a i {
   color: black;
-  font-size: 1.3em;
+  font-size: 2em;
 }
 
 .social-media {
   display: flex;
   justify-content: start;
   align-items: center;
-  margin-top: 1.5em;
+  margin-top: 2.5em;
 }
 
 .social-media i {
   margin-right: 1em;
-  font-size: 2em;
+  font-size: 2.5em;
   color: black;
 }
 
 .social-media i:hover {
-  color: orangered;
+  color: #116a7b;
 }
 
 .group i:hover {
-  color: orangered;
+  color: #116a7b;
 }
 
 .card-profile {
-  width: 80%;
+  width: 400px;
   height: 100%;
   box-shadow: 2px 2px 2px 2px #888;
   margin: auto;
@@ -168,4 +214,62 @@ h1 {
 
 .card-profile p {
   margin-top: 1em;
+}
+
+/* Media Queris */
+
+/* Tablet */
+@media only screen and (max-width: 900px) {
+  .nav-left li a {
+    display: none;
+  }
+
+  .nav-right a {
+    display: none;
+  }
+
+  .nav-barsmenu {
+    display: inline-block;
+    margin-right: 2em;
+  }
+
+  .hamburger-nav-container .hamburger-active {
+    background-color: #116a7b;
+    color: #fff;
+  }
+
+  .card-container {
+    flex-direction: column;
+    width: 80%;
+    text-align: justify;
+    font-size: 80%;
+  }
+
+  .social-media {
+    justify-content: center;
+    margin-bottom: 1em;
+  }
+
+  .card-profile {
+    width: 80%;
+  }
+
+  .card-profile img {
+    margin-bottom: 2em;
+  }
+
+  .card-profile:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* Phone */
+@media only screen and (max-width: 576px) {
+  .card-container {
+    font-size: 55%;
+  }
+
+  .nav-left img {
+    width: 120px;
+  }
 }
