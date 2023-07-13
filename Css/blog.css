@@ -193,8 +193,19 @@ hr {
 }
 
 @media only screen and (max-width: 578px) {
+  html {
+    font-size: 80%;
+  }
+
+  form {
+    width: 70%;
+  }
   #content {
     display: grid;
     grid-template-columns: auto;
+  }
+
+  section {
+    margin-top: 10em;
   }
 }

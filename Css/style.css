@@ -91,6 +91,7 @@ nav {
   left: 0;
   right: 0;
   z-index: 9999;
+  background-color: #fff;
 }
 
 .hamburger-nav-container a {
@@ -101,7 +102,6 @@ nav {
   justify-content: center;
   align-items: center;
   padding: 0.5em;
-  background-color: #fff;
   border-bottom: 1px solid black;
 }
 
@@ -220,6 +220,16 @@ h1 {
 
 /* Tablet */
 @media only screen and (max-width: 900px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .hamburger-nav-container {
+    top: 60px;
+  }
+  section {
+    margin-top: 7em;
+  }
   .nav-left li a {
     display: none;
   }
@@ -242,7 +252,6 @@ h1 {
     flex-direction: column;
     width: 80%;
     text-align: justify;
-    font-size: 80%;
   }
 
   .social-media {
@@ -265,7 +274,7 @@ h1 {
 
 /* Phone */
 @media only screen and (max-width: 576px) {
-  .card-container {
+  html {
     font-size: 55%;
   }
 

@@ -27,7 +27,7 @@ option {
 }
 
 select {
-  width: 105%;
+  width: 104%;
 }
 
 label {
@@ -35,23 +35,23 @@ label {
   font-weight: 600;
 }
 
-.btn-summit {
-  width: 105%;
+.btn-submit {
+  width: 104%;
   display: flex;
   justify-content: end;
 }
 
-button {
+.btn-submit button {
   padding: 0.7em 1.5em;
   border-radius: 1.5em;
   margin-bottom: 2em;
   border: none;
   background-color: #116A7B;
-  color: white;
+  color: #fff;
   cursor: pointer;
 }
 
-button:hover {
+.btn-submit button:hover {
   background-color: rgb(22, 143, 167);
   color: white;
 }
@@ -59,3 +59,15 @@ button:hover {
 .nav-right .active {
   background-color: #116A7B;
 }
+
+@media only screen and (max-width : 578px) {
+    html {
+      font-size: 80%;
+    }
+
+    form {
+      width: 60%;
+    }
+}
+
+  
