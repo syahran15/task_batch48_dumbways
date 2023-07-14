@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Css/style.css" />
+    <link rel="stylesheet" href="Css/testimonial.css" />
+    <title>Testimonial</title>
+
+     <!-- Font awesome -->
+     <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+     crossorigin="anonymous"
+     referrerpolicy="no-referrer"
+   />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <ul>
+          <a href="index.html"><img src="images/logo.svg" alt="logo" /></a>
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="testimonial.html" class="active">Testimonial</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <a href="contact.html">Contact Me</a>
+      </div>
+
+      <!-- Hamburger Start -->
+      <div class="nav-barsmenu" id="barsmenu">
+        <button
+          style="background-color: transparent; border: none; cursor: pointer"
+          onclick="openHamburger()"
+        >
+          <i class="fa-2x fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <!-- Hamburger End -->
+    </nav>
+
+    <!-- Navigation Mobile Start -->
+    <div class="hamburger-nav-container" id="hamburger-nav-container">
+      <a href="index.html" class="hamburger-active">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="testimonial.html">Testimonial</a>
+      <a href="contact.html" class="btn-contact-humburger">Contact Me</a>
+    </div>
+    <!-- Navigation Mobile End -->
+
+    <!-- Content -->
+    <h1>Testimonials</h1>
+    <section class="testimonials" id="testimonials">
+      <!-- <div class="testimonial">
+        <img
+          src= ${this.image}
+          alt=""
+          class="profile-testimonial"
+        />
+        <p class="quote">
+          ${this.quote}
+        </p>
+        <p class="author">- ${this.user}</p>
+      </div> -->
+    </section>
+
+    <!-- JavaScript -->
+    <script src="Js/index.js"></script>
+    <script src="Js/testimonial.js"></script>
+  </body>
+</html>
